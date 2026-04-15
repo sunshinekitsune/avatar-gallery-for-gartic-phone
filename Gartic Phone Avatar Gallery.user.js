@@ -253,7 +253,8 @@
     }
 
     setInterval(function () {
-        const menuButton = document.querySelector(".button-line.button-back");
+        let menuButton = document.querySelector(".button-line.button-back");
+        menuButton ??= document.querySelector(".button-line.button-exit");
         if (menuButton && !menuButton.getAttribute("avatar_menu_injected")) {
             menuButton.setAttribute("avatar_menu_injected", true);
             menuButton.addEventListener("click", () => inject());
